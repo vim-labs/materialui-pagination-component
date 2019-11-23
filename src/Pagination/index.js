@@ -37,7 +37,7 @@ export const styles = () => ({
     "& .MuiButton-contained": {
       boxShadow: "none"
     },
-    // Fix ripple fill area
+    // Fix ripple fill area.
     "& .MuiButtonBase-root.MuiTab-root:not(:first-child)": {
       marginLeft: -1
     },
@@ -68,7 +68,7 @@ export const styles = () => ({
       backgroundColor: "rgba(0, 0, 0, 0.08)"
     }
   },
-  // Select box styles
+  // Select box styles.
   formControl: {
     minWidth: 96,
     flexGrow: 1,
@@ -372,8 +372,8 @@ const Pagination = React.forwardRef(function Pagination(props, ref) {
       elevation={
         /* If an elevation is provided, use that value without mouseEnter & mouseLeave hover effects.
          * If no elevation is provided:
-         *   - Toggle value between 1 and 2 on :hover for 'text' variants
-         *   - Toggle value between 0 and 1 on :hover for 'outlined' variants
+         *   - Toggle value between 1 and 2 on :hover for 'text' variants.
+         *   - Toggle value between 0 and 1 on :hover for 'outlined' variants.
          */
         elevation !== null ? elevation : isHovered + Number(variant === "text")
       }
