@@ -1,6 +1,6 @@
 {
   "name": "materialui-pagination-component",
-  "version": "1.1.4",
+  "version": "1.1.6",
   "description": "A pagination component for Material-UI.",
   "main": "dist/pagination.js",
   "scripts": {
@@ -35,9 +35,7 @@
     "babel-plugin-react-remove-properties": "^0.3.0",
     "babel-plugin-transform-dev-warning": "^0.1.1",
     "babel-plugin-transform-react-constant-elements": "^6.23.0",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24"
   },
   "author": "iRyanBell",
   "license": "MIT",

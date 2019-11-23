@@ -176,8 +176,11 @@ const Pagination = React.forwardRef(function Pagination(props, ref) {
   } = props;
 
   let {
-    pageWindowLength = 3 // The number of buttons or tabs shown when selectVariant !== "select".
+    pageWindowLength = 3 // The default number of buttons or tabs shown when selectVariant !== "select".
   } = props;
+
+  // Crop maximum window size to total pages
+  pageWindowLength = Math.min(pageWindowLength, totalPages);
 
   // Expand the pageWindow length by 2 when First & Last navigation buttons are replaced by pageWindow buttons.
   if (pageWindowVariant === "ellipsis") {
@@ -191,18 +194,15 @@ const Pagination = React.forwardRef(function Pagination(props, ref) {
   const pageItems = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   // The number of buttons or tabs to skip when selectVariant !== "select".
-  const windowOffset =
-    pageWindowLength === 1
-      ? 0 // No offset if we have a single pageWindow item.
-      : Math.min(
-          // Offset begins once the last pageWindowItem > totalPages / 2.
-          totalPages - pageWindowLength,
-          Math.max(
-            // Offset ends when the last pageWindowItem === totalPages.
-            0,
-            page - pageWindowLength + Math.floor(pageWindowLength / 2)
-          )
-        );
+  const windowOffset = Math.max(
+    0,
+    Math.min(
+      // Offset begins once the last pageWindowItem > totalPages / 2.
+      totalPages - pageWindowLength,
+      // Offset ends when the last pageWindowItem === totalPages.
+      page - pageWindowLength + Math.floor(pageWindowLength / 2)
+    )
+  );
 
   // Create an array for the current page selection window.
   const pageWindowItems =
