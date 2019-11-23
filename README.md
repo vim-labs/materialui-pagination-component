@@ -25,6 +25,7 @@ function App() {
     <Pagination
       variant="text" // Valid options are ["text", "outlined"].
       selectVariant="select" // Valid options are ["button", "tab", "select"].
+      pageWindowVariant="standard" // Valid options are ["standard", "ellipsis"].
       color="primary" // Passed down to Material-UI components.
       indicatorColor={null} // Passed down to Material-UI Tabs.
       hideNavigation={false} // Hides the first, last, previous, & next page navigation buttons.

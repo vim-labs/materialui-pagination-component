@@ -17,7 +17,7 @@ function App() {
           variant="h5"
           style={{ display: "block" }}
         >
-          Pagination Component Demo
+          Pagination Component Examples
         </Typography>
       </Box>
 
@@ -27,7 +27,7 @@ function App() {
           variant="caption"
           style={{ display: "block" }}
         >
-          Pagination with Select Menu
+          Pagination with a select menu.
         </Typography>
         <Pagination
           page={page}
@@ -42,7 +42,7 @@ function App() {
           variant="caption"
           style={{ display: "block" }}
         >
-          Pagination with Tabs
+          Pagination with tabs.
         </Typography>
         <Pagination
           selectVariant="tab"
@@ -58,7 +58,7 @@ function App() {
           variant="caption"
           style={{ display: "block" }}
         >
-          Pagination (outlined) with Select Menu
+          Pagination (outlined) with a select menu.
         </Typography>
         <Pagination
           variant="outlined"
@@ -74,11 +74,35 @@ function App() {
           variant="caption"
           style={{ display: "block" }}
         >
-          Pagination (outlined) with Buttons
+          Pagination with tabs, hidden navigation, zero elevation, and
+          'ellipsis' pageWindowVariant.
+        </Typography>
+        <Pagination
+          hideNavigation
+          variant="text"
+          selectVariant="tab"
+          pageWindowVariant="ellipsis"
+          elevation={0}
+          page={page}
+          totalPages={10}
+          pageWindowLength={3}
+          onChange={handleOnChange}
+        />
+      </Box>
+      <Box px={4} py={1}>
+        <Typography
+          color="textSecondary"
+          variant="caption"
+          style={{ display: "block" }}
+        >
+          Pagination (outlined) with buttons, text navigation, and 'ellipsis'
+          pageWindowVariant.
         </Typography>
         <Pagination
           variant="outlined"
           selectVariant="button"
+          navigationVariant="text"
+          pageWindowVariant="ellipsis"
           page={page}
           totalPages={10}
           pageWindowLength={5}
@@ -111,8 +135,8 @@ function App() {
           variant="caption"
           style={{ display: "block" }}
         >
-          Pagination with window length: 3, high elevation, secondary color, and
-          disabled navigation
+          Pagination with window length of 3, a high elevation, secondary color,
+          and disabled navigation.
         </Typography>
         <Pagination
           hideNavigation
@@ -131,7 +155,7 @@ function App() {
           variant="caption"
           style={{ display: "block" }}
         >
-          Pagination with window length: 10 and wide container
+          Pagination with a window length of 10 inside a wide container.
         </Typography>
         <Pagination
           variant="outlined"

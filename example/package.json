@@ -1,14 +1,13 @@
 {
-  "name": "materialui-pagination-row",
+  "name": "materialui-pagination-component-example",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.6.1",
-    "@material-ui/icons": "^4.5.1",
+    "@material-ui/core": "^4.7.0",
+    "materialui-pagination-component": "^1.1.3",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.2.0",
-    "materialui-pagination-component": "^1.0.0"
+    "react-scripts": "3.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,8 +1,11 @@
 {
   "name": "materialui-pagination-component",
-  "version": "1.0.0",
+  "version": "1.1.3",
   "description": "A pagination component for Material-UI.",
-  "main": "Pagination.js",
+  "main": "dist/pagination.js",
+  "scripts": {
+    "build": "webpack"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vim-labs/materialui-pagination-component.git"
@@ -12,8 +15,29 @@
     "pagination",
     "material-ui"
   ],
-  "peerDependencies": {
-    "@material-ui/core": "^4.7.0"
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.7.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
+    "@babel/plugin-transform-object-assign": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-optimize-clsx": "^2.5.0",
+    "babel-plugin-react-remove-properties": "^0.3.0",
+    "babel-plugin-transform-dev-warning": "^0.1.1",
+    "babel-plugin-transform-react-constant-elements": "^6.23.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   },
   "author": "iRyanBell",
   "license": "MIT",
