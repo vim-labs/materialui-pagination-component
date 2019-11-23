@@ -47,6 +47,6 @@ function App() {
 }
 ```
 
-## Screenshot
+## Examples:
 
 ![Screenshot](https://user-images.githubusercontent.com/25379378/69484738-95355f00-0deb-11ea-8474-5121df1231cc.png)
