@@ -19,6 +19,12 @@ export const styles = () => ({
   paper: {
     display: "inline-flex"
   },
+  "variant-outlined": {
+    // Add borders to tabs when variant === "outlined"
+    "& .MuiButtonBase-root.MuiTab-root": {
+      border: "1px solid rgba(0, 0, 0, 0.23)"
+    }
+  },
   // Wrap inner elements inside a button group.
   buttonGroup: {
     width: "100%",
@@ -40,10 +46,6 @@ export const styles = () => ({
     // Fix ripple fill area.
     "& .MuiButtonBase-root.MuiTab-root:not(:first-child)": {
       marginLeft: -1
-    },
-    // Add borders to tabs when variant !== "outlined".
-    "& .MuiButtonBase-root.MuiTab-root": {
-      border: "1px solid rgba(0, 0, 0, 0.23)"
     },
     // Round the first tab if navigation buttons are hidden.
     "& .MuiTabs-root:first-child, & .MuiTabs-root:first-child .MuiTab-root:first-child": {
@@ -389,7 +391,12 @@ const Pagination = React.forwardRef(function Pagination(props, ref) {
          */
         elevation !== null ? elevation : isHovered + Number(variant === "text")
       }
-      className={clsx(props.classes.root, classes.paper, className)}
+      className={clsx(
+        props.classes.root,
+        classes.paper,
+        classes[`variant-${variant}`],
+        className
+      )}
       onMouseLeave={() => setIsHovered(0)}
       onMouseEnter={() => setIsHovered(1)}
       ref={ref}
