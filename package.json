@@ -1,6 +1,6 @@
 {
   "name": "materialui-pagination-component",
-  "version": "1.1.6",
+  "version": "1.1.8",
   "description": "A pagination component for Material-UI.",
   "main": "dist/pagination.js",
   "scripts": {

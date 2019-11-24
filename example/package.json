@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.7.0",
-    "materialui-pagination-component": "^1.1.6",
+    "materialui-pagination-component": "^1.1.8",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.2.0"

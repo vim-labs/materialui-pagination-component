@@ -151,7 +151,7 @@ const Icon = {
 };
 
 const Pagination = React.forwardRef(function Pagination(props, ref) {
-  const { classes, className, ...other } = props;
+  const { classes, className } = props;
 
   const {
     variant = "text", // Valid options are ["text", "outlined"].
@@ -221,7 +221,7 @@ const Pagination = React.forwardRef(function Pagination(props, ref) {
   ));
 
   // Use a Select component when selectVariant === "select".
-  const pageWindowSelect = (
+  const PageWindowSelect = () => (
     <FormControl
       color={color}
       variant={variant === "outlined" ? "outlined" : "standard"}
@@ -301,7 +301,7 @@ const Pagination = React.forwardRef(function Pagination(props, ref) {
     pageWindowButtons.splice(
       1,
       0,
-      <Button disabled>
+      <Button disabled key={"button-start-ellipsis"}>
         <Icon.MoreHoriz />
       </Button>
     );
@@ -311,6 +311,7 @@ const Pagination = React.forwardRef(function Pagination(props, ref) {
       0,
       <Tab
         disabled
+        key={"tab-start-ellipsis"}
         label={<Icon.MoreHoriz />}
         classes={{ root: classes.tab }}
       />
@@ -321,7 +322,7 @@ const Pagination = React.forwardRef(function Pagination(props, ref) {
     pageWindowButtons.splice(
       pageWindowButtons.length - 1,
       0,
-      <Button disabled>
+      <Button disabled key={"button-end-ellipsis"}>
         <Icon.MoreHoriz />
       </Button>
     );
@@ -331,6 +332,7 @@ const Pagination = React.forwardRef(function Pagination(props, ref) {
       0,
       <Tab
         disabled
+        key={"tab-end-ellipsis"}
         label={<Icon.MoreHoriz />}
         classes={{ root: classes.tab }}
       />
@@ -345,7 +347,7 @@ const Pagination = React.forwardRef(function Pagination(props, ref) {
     tabOffset++;
   }
 
-  const pageWindowTabs = (
+  const PageWindowTabs = () => (
     <Tabs
       value={pageWindowItems.indexOf(page) + tabOffset}
       indicatorColor={indicatorColor || color}
@@ -381,7 +383,6 @@ const Pagination = React.forwardRef(function Pagination(props, ref) {
       onMouseLeave={() => setIsHovered(0)}
       onMouseEnter={() => setIsHovered(1)}
       ref={ref}
-      {...other}
     >
       <ButtonGroup
         classes={{ root: classes.buttonGroup }}
@@ -404,8 +405,8 @@ const Pagination = React.forwardRef(function Pagination(props, ref) {
             {navigationVariant === "icon" ? <Icon.ChevronLeft /> : "Previous"}
           </Button>
         )}
-        {selectVariant === "select" && pageWindowSelect}
-        {selectVariant === "tab" && pageWindowTabs}
+        {selectVariant === "select" && <PageWindowSelect />}
+        {selectVariant === "tab" && <PageWindowTabs />}
         {selectVariant === "button" && pageWindowButtons}
         {!hideNavigation && !hideNext && (
           <Button
