@@ -28,7 +28,7 @@ function App() {
       navigationVariant="icon" // Valid options are ["icon", "text"].
       pageWindowVariant="standard" // Valid options are ["standard", "ellipsis"].
       color="primary" // Passed down to Material-UI components.
-      indicatorColor={false} // Passed down to Material-UI Tabs.
+      indicatorColor="primary" // Passed down to Material-UI Tabs.
       hideNavigation={false} // Hides the first, last, previous, & next page navigation buttons.
       hideFirst={false} // Hides the first page navigation button.
       hideLast={false} // Hides the last page navigation button.
