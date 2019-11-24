@@ -42,12 +42,24 @@ export const styles = () => ({
       marginLeft: -1
     },
     // Add borders to tabs when variant !== "outlined".
-    "& .MuiButtonGroup-groupedOutlined .MuiButtonBase-root.MuiTab-root": {
+    "& .MuiButtonBase-root.MuiTab-root": {
       border: "1px solid rgba(0, 0, 0, 0.23)"
+    },
+    // Round the first tab if navigation buttons are hidden.
+    "& .MuiTabs-root:first-child, & .MuiTabs-root:first-child .MuiTab-root:first-child": {
+      overflow: "hidden",
+      borderTopLeftRadius: 4,
+      borderBottomLeftRadius: 4
     },
     // Fix left borders on first button after a Select box.
     "& .MuiFormControl-root + .MuiButtonBase-root": {
       borderLeftColor: "transparent"
+    },
+    // Round the last tab if navigation buttons are hidden.
+    "& .MuiTabs-root:last-child, & .MuiTabs-root:first-child .MuiTab-root:last-child": {
+      overflow: "hidden",
+      borderTopRightRadius: 4,
+      borderBottomRightRadius: 4
     },
     // Fix right borders between navigation buttons & tabs.
     "& .MuiButtonGroup-groupedText:not(:last-child), & .MuiButtonBase-root.MuiTab-root:not(:last-child), .MuiTabs-root:not(:first-child) .MuiButtonBase-root:last-child": {
@@ -56,9 +68,7 @@ export const styles = () => ({
   },
   // Style tabs similar to pagination buttons.
   tabs: {
-    minHeight: 40,
-    overflow: "hidden",
-    borderRadius: 4
+    minHeight: 40
   },
   // Style tab similar to pagination buttons.
   tab: {

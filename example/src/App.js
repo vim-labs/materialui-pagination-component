@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Box, Typography } from "@material-ui/core";
-// import Pagination from "materialui-pagination-component";
-import Pagination from "./Pagination";
+import Pagination from "materialui-pagination-component";
 
 function App() {
   const [page, setPage] = useState(1);
