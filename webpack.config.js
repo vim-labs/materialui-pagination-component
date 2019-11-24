@@ -17,7 +17,8 @@ module.exports = {
   output: {
     filename: "pagination.js",
     path: path.resolve(__dirname, "dist"),
-    libraryTarget: "umd"
+    libraryTarget: "umd",
+    globalObject: "this"
   },
   externals: {
     react: {
